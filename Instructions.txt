@@ -5,11 +5,11 @@
 	executive member, non-profit, and a corperate member. 
 
 	attributes
-	MEM ID
-	Primary email
-	Membership type
-	Annual cost
-	Current ammount of purchase for month maybe Double
+	MEM ID   [X]
+	Primary email [X]
+	Membership type [X]
+	Annual cost  [X]
+	Current ammount of purchase for month maybe Double [X]
 	
 
 	The REG MEM will have a flat percent for cashback rewards on all purchases

@@ -5,6 +5,19 @@ namespace MemeberShipProg
         private string? membershipID;
         private string? emailAddress;
         private string? membershipType;
+        private double AmmounThisMonth = 0;
+        private double annualCost = 0;
+
+        public double PBammountThisMonth
+        {
+          get{return AmmounThisMonth;}
+          set{AmmounThisMonth = value;}
+        }
+         public double PBannualCost
+        {
+          get{return annualCost;}
+          set{annualCost = value;}
+        }
         
         public string? PBmembershipID
         {
@@ -30,11 +43,13 @@ namespace MemeberShipProg
             emailAddress = "";
             membershipType = "";
         }
-        public MemberShip(string NewMemID, string NewEmail, string newMemTy)
+        public MemberShip(string NewMemID, string NewEmail, string newMemTy, double newAmmountMonth, double newAnnual)
         {
             membershipID = NewMemID;
             emailAddress = NewEmail;
             membershipType = newMemTy;
+            AmmounThisMonth = newAmmountMonth;
+            annualCost = newAnnual;
         }
 
 
