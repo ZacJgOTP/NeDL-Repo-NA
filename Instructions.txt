@@ -15,7 +15,7 @@
 	The REG MEM will have a flat percent for cashback rewards on all purchases
 	(% to be determinded) 
 
-	The EXEC MEM will have percentages for for two teirs which one has to be below 
+	The EXEC MEM will have percentages for for two tiers which one has to be below 
 	1000$ and the other being above that. 
 	 
 	The NONPROF MEM will need to indicate wether or not it is a military or educational

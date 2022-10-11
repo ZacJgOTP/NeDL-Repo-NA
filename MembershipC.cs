@@ -10,31 +10,31 @@ namespace MemeberShipProg
 
         public double PBammountThisMonth
         {
-          get{return AmmounThisMonth;}
-          set{AmmounThisMonth = value;}
+            get { return AmmounThisMonth; }
+            set { AmmounThisMonth = value; }
         }
-         public double PBannualCost
+        public double PBannualCost
         {
-          get{return annualCost;}
-          set{annualCost = value;}
+            get { return annualCost; }
+            set { annualCost = value; }
         }
-        
+
         public string? PBmembershipID
         {
-          get{return membershipID;}
-          set{membershipID = value;}
+            get { return membershipID; }
+            set { membershipID = value; }
         }
 
         public string? PBemailAddress
         {
-          get{return emailAddress;}
-          set{emailAddress = value;}
+            get { return emailAddress; }
+            set { emailAddress = value; }
         }
 
         public string? PBmembershipType
         {
-          get{return membershipType;}
-          set{membershipType = value;}
+            get { return membershipType; }
+            set { membershipType = value; }
         }
 
         public MemberShip()
@@ -55,5 +55,5 @@ namespace MemeberShipProg
 
 
     }//end of class Membership 
-    
+
 }//end of namespace 

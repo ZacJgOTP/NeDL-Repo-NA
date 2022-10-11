@@ -6,17 +6,17 @@ namespace MemeberShipProg
 
         public double PBCashBack
         {
-            get{return Cashback;}
-            set{ Cashback = value;}
+            get { return Cashback; }
+            set { Cashback = value; }
         }
-        public RegularMember(string NewMemID, string NewMemEmail, string newMemTy,double newAmmountMonth ,double newCashback, double newAnnual) : base ( NewMemID, NewMemEmail, newMemTy, newAmmountMonth, newAnnual, newAmmountMonth)
+        public RegularMember(string NewMemID, string NewMemEmail, string newMemTy, double newAmmountMonth, double newCashback, double newAnnual) : base(NewMemID, NewMemEmail, newMemTy, newAmmountMonth, newAnnual, newAmmountMonth)
         {
             Cashback = newCashback;
         }
 
         public string Tostring()
         {
-            return base.ToString() + "| MemberID : " + PBmembershipID + "| Member Email Contact : " + PBemailAddress+ "| Member type :" +PBmembershipType+ "| Ammount this month"+ PBammountThisMonth+ "| Cash back percentage : "+PBCashBack+"| Ammount this month : "+PBammountThisMonth+"| Annual Fee: "+PBannualCost;
+            return base.ToString() + "| MemberID : " + PBmembershipID + "| Member Email Contact : " + PBemailAddress + "| Member type :" + PBmembershipType + "| Ammount this month" + PBammountThisMonth + "| Cash back percentage : " + PBCashBack + "| Ammount this month : " + PBammountThisMonth + "| Annual Fee: " + PBannualCost;
         }
 
     }// end of class regmem
