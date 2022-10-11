@@ -43,13 +43,14 @@ namespace MemeberShipProg
             emailAddress = "";
             membershipType = "";
         }
-        public MemberShip(string NewMemID, string NewEmail, string newMemTy, double newAmmountMonth, double newAnnual)
+        public MemberShip(string NewMemID, string NewEmail, string newMemTy, double newAmmountMonth, double newAnnual, double newthismonth)
         {
             membershipID = NewMemID;
             emailAddress = NewEmail;
             membershipType = newMemTy;
             AmmounThisMonth = newAmmountMonth;
             annualCost = newAnnual;
+            AmmounThisMonth = newthismonth;
         }
 
 

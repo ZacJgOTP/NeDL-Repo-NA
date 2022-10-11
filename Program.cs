@@ -18,6 +18,15 @@ namespace MemeberShipProg
 //-----------------CONTAINER FOR MENU CHOICE VARIABLES-----------------------\\
 
 
+//-----------------CONTAINER FOR LIST VARIABLES------------------------------\\
+        List<RegularMember> regMemList = new List<RegularMember>();
+
+        regMemList.Add(new RegularMember ("485454","TEST.Email@email.com", "Regular",7775,.2,.25)); //Annual Fee is .25 and cashback is .2
+        regMemList.Add(new RegularMember ("485445","TEST.Email@email.com", "Regular",7456,.2,.25));
+
+
+//-----------------CONTAINER FOR LIST VARIABLES------------------------------\\
+
 
         do
         {
@@ -80,7 +89,10 @@ namespace MemeberShipProg
 
                 if(menuTypeChoiceSt == "L" || menuTypeChoiceSt== "l")
                 {
-                    // list all memebers
+                    foreach(RegularMember aMember in regMemList)
+                    {
+                        Console.WriteLine(aMember);
+                    }
                 }
                 if(menuTypeChoiceSt == "P" || menuTypeChoiceSt== "p")
                 {
@@ -138,7 +150,11 @@ namespace MemeberShipProg
                 }
                 if(menuChoiceString == "R" || menuChoiceString =="r")
                 {
-                    // R logic
+                    foreach(RegularMember aMember in regMemList)
+                    {
+                        Console.WriteLine(aMember);
+                    }
+                    Console.ReadKey();
                 }
                 if(menuChoiceString == "U" || menuChoiceString =="u")
                 {

@@ -1,0 +1,15 @@
+C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\bin\Debug\net6.0\Week 5  competency.exe
+C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\bin\Debug\net6.0\Week 5  competency.deps.json
+C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\bin\Debug\net6.0\Week 5  competency.runtimeconfig.json
+C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\bin\Debug\net6.0\Week 5  competency.dll
+C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\bin\Debug\net6.0\ref\Week 5  competency.dll
+C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\bin\Debug\net6.0\Week 5  competency.pdb
+C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\obj\Debug\net6.0\Week 5  competency.csproj.AssemblyReference.cache
+C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\obj\Debug\net6.0\Week 5  competency.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\obj\Debug\net6.0\Week 5  competency.AssemblyInfoInputs.cache
+C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\obj\Debug\net6.0\Week 5  competency.AssemblyInfo.cs
+C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\obj\Debug\net6.0\Week 5  competency.csproj.CoreCompileInputs.cache
+C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\obj\Debug\net6.0\Week 5  competency.dll
+C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\obj\Debug\net6.0\ref\Week 5  competency.dll
+C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\obj\Debug\net6.0\Week 5  competency.pdb
+C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\obj\Debug\net6.0\Week 5  competency.genruntimeconfig.cache
