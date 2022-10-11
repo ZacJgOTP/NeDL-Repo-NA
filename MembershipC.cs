@@ -1,6 +1,6 @@
 namespace MemeberShipProg
 {
-    class MemberShip
+    abstract class MemberShip
     {
         private string? membershipID;
         private string? emailAddress;
