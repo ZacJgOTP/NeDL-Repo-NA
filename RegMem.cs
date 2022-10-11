@@ -4,5 +4,6 @@ namespace MemeberShipProg
     {
         public double Cashback = .25;
 
+        
     }// end of class regmem
 }// end of namespcae

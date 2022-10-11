@@ -46,7 +46,7 @@ namespace MemeberShipProg
 
         }while(!(menuTypeChoiceSt == "Q") && (menuTypeChoiceSt == "q")); 
         
-        //----------------------------------- end of main menu--------------------------------------------\\
+        //----------------------------------- END OF MAIN MENU--------------------------------------------\\
 
         if(menuTypeChoiceSt == "T"|| menuTypeChoiceSt=="t")
         {
