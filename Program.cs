@@ -16,7 +16,7 @@ namespace MemeberShipProg
             bool transactionChoice = false;
             string? transactionChoiceSt;
 
-            string? MainMenuQuitST;
+           
             //-----------------CONTAINER FOR MENU CHOICE VARIABLES-----------------------\\
 
 
@@ -29,12 +29,9 @@ namespace MemeberShipProg
 
             //-----------------CONTAINER FOR LIST VARIABLES------------------------------\\
 
-        do
-        {   
-            Console.WriteLine("Would you like to return to main menu or quit the program? Q: quit the prog || C: continue");
-            MainMenuQuitST = Console.ReadLine();
+       
            
-            //-----------------END OF QUIT QUESTION.START MAIN MENU----------------------\\
+            //-----------------START MAIN MENU----------------------\\
             do
             {
                 Console.WriteLine("Please make a selection for the menu tha you would like to use");
@@ -188,7 +185,7 @@ namespace MemeberShipProg
 
             }
             //----------------------------------- END OF ADMINISTRATION MENU IF STATMENT --------------------------------------------\\
-        }while(!(MainMenuQuitST == "Q") && !(MainMenuQuitST== "q"));
+        
 
         }// end of main 
 

@@ -1,0 +1,4 @@
+interface IAnnual 
+{
+    double anRate();
+}

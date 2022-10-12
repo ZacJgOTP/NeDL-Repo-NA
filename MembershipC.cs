@@ -6,19 +6,14 @@ namespace MemeberShipProg
         private string? emailAddress;
         private string? membershipType;
         private double AmmounThisMonth = 0;
-        private double annualCost = 0;
+        
 
         public double PBammountThisMonth
         {
             get { return AmmounThisMonth; }
             set { AmmounThisMonth = value; }
         }
-        public double PBannualCost
-        {
-            get { return annualCost; }
-            set { annualCost = value; }
-        }
-
+    
         public string? PBmembershipID
         {
             get { return membershipID; }
@@ -43,15 +38,15 @@ namespace MemeberShipProg
             emailAddress = "";
             membershipType = "";
         }
-        public MemberShip(string NewMemID, string NewEmail, string newMemTy, double newAmmountMonth, double newAnnual, double newthismonth)
+        public MemberShip(string NewMemID, string NewEmail, string newMemTy, double newAmmountMonth)
         {
             membershipID = NewMemID;
             emailAddress = NewEmail;
             membershipType = newMemTy;
             AmmounThisMonth = newAmmountMonth;
-            annualCost = newAnnual;
-            AmmounThisMonth = newthismonth;
+
         }
+        
 
 
     }//end of class Membership 

@@ -1,0 +1,4 @@
+interface ICashback
+{
+    double newCashback();
+}
