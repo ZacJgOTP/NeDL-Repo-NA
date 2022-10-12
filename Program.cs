@@ -16,21 +16,21 @@ namespace MemeberShipProg
             bool transactionChoice = false;
             string? transactionChoiceSt;
 
-           
+
             //-----------------CONTAINER FOR MENU CHOICE VARIABLES-----------------------\\
 
 
             //-----------------CONTAINER FOR LIST VARIABLES------------------------------\\
             List<RegularMember> regMemList = new List<RegularMember>();
 
-            regMemList.Add(new RegularMember("485454", "TEST.Email@email.com", "Regular", 7775, .2, .25)); //Annual Fee is .25 and cashback is .2
-            regMemList.Add(new RegularMember("485445", "TEST.Email@email.com", "Regular", 7456, .2, .25));
+            //regMemList.Add(new RegularMember("485454", "TEST.Email@email.com", "Regular", 7775, .2, .25)); //Annual Fee is .25 and cashback is .2
+           // regMemList.Add(new RegularMember("485445", "TEST.Email@email.com", "Regular", 7456, .2, .25));
 
 
             //-----------------CONTAINER FOR LIST VARIABLES------------------------------\\
 
-       
-           
+
+
             //-----------------START MAIN MENU----------------------\\
             do
             {
@@ -57,8 +57,8 @@ namespace MemeberShipProg
 
                 }
 
-            
-            }while(!menuTypeChoice);
+
+            } while (!menuTypeChoice);
             //----------------------------------- END OF MAIN MENU--------------------------------------------\\
 
             if (menuTypeChoiceSt == "T" || menuTypeChoiceSt == "t")
@@ -68,7 +68,7 @@ namespace MemeberShipProg
                 {
 
                     do
-                    {   
+                    {
                         Console.WriteLine("-----------------------------------------------------------------------");
                         Console.WriteLine("Welcome to the transactional menu! Please select one of the options");
                         Console.WriteLine("L: List all the memberships");
@@ -111,7 +111,7 @@ namespace MemeberShipProg
                     {
                         // apply cashback rewards
                     }
-                    else 
+                    else
                     {
                         Console.WriteLine("Exiting program");
                     }
@@ -185,7 +185,7 @@ namespace MemeberShipProg
 
             }
             //----------------------------------- END OF ADMINISTRATION MENU IF STATMENT --------------------------------------------\\
-        
+
 
         }// end of main 
 

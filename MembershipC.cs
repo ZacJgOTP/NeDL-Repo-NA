@@ -6,14 +6,14 @@ namespace MemeberShipProg
         private string? emailAddress;
         private string? membershipType;
         private double AmmounThisMonth = 0;
-        
+
 
         public double PBammountThisMonth
         {
             get { return AmmounThisMonth; }
             set { AmmounThisMonth = value; }
         }
-    
+
         public string? PBmembershipID
         {
             get { return membershipID; }
@@ -46,7 +46,32 @@ namespace MemeberShipProg
             AmmounThisMonth = newAmmountMonth;
 
         }
-        
+        public void MemberShipPruchase(double NewAmmountMonth, double userAmmount)
+        {
+
+            AmmounThisMonth = purchase(userAmmount, NewAmmountMonth);
+            Console.WriteLine("transaction successful new account balance = " + AmmounThisMonth);
+
+        }
+        public void MemberShipReturn(double NewAmmountMonth, double userAmmount)
+        {
+
+            AmmounThisMonth = returns(userAmmount, NewAmmountMonth);
+            Console.WriteLine("transaction successful new account balance = " + AmmounThisMonth);
+
+        }
+        static double purchase(double PurcPrice, double AmmounThisMonth)
+        {
+            double Total = PurcPrice + AmmounThisMonth;
+            return Total;
+        }
+        static double returns(double PurcPrice, double AmmounThisMonth)
+        {
+            double TotalReturn = AmmounThisMonth - PurcPrice;
+            return TotalReturn;
+        }
+
+
 
 
     }//end of class Membership 
