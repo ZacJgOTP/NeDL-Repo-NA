@@ -24,7 +24,7 @@ namespace MemeberShipProg
             List<RegularMember> regMemList = new List<RegularMember>();
 
             //regMemList.Add(new RegularMember("485454", "TEST.Email@email.com", "Regular", 7775, .2, .25)); //Annual Fee is .25 and cashback is .2
-           // regMemList.Add(new RegularMember("485445", "TEST.Email@email.com", "Regular", 7456, .2, .25));
+            regMemList.Add(new RegularMember("485445", "TEST.Email@email.com", "Regular", 7456));
 
 
             //-----------------CONTAINER FOR LIST VARIABLES------------------------------\\
@@ -101,11 +101,59 @@ namespace MemeberShipProg
                     }
                     if (menuTypeChoiceSt == "P" || menuTypeChoiceSt == "p")
                     {
-                        // pruchase transaction
+                        string? idCheck;
+                        bool found = false;
+                        Console.WriteLine("Please enter the member ID to find the account");
+                        idCheck = Console.ReadLine();
+
+                        for (int index = 0; index < regMemList.Count; index++)
+                        {
+                            if ((regMemList[index].PBmembershipID == idCheck) && (regMemList[index].PBmembershipID == idCheck))
+                            {
+                                Console.WriteLine("Please enter the total of the transaction");
+                                double transactionAmmount = Convert.ToDouble(Console.ReadLine());
+
+                                double AmmountMonth = regMemList[index].PBammountThisMonth;
+                                regMemList[index].PBammountThisMonth = RegularMember.purchase(transactionAmmount, AmmountMonth);
+
+
+                                found = true;
+                            }
+                        }  // end foreach  
+
+                        if (found)
+                            Console.WriteLine("Purchase successfull!");
+                        else
+                            Console.WriteLine("Purchase failed, please try again.");
+
                     }
                     if (menuTypeChoiceSt == "T" || menuTypeChoiceSt == "t")
                     {
-                        // return transaction
+                        string? idCheck;
+                        bool found = false;
+                        Console.WriteLine("Please enter the member ID to find the account");
+                        idCheck = Console.ReadLine();
+
+                        for (int index = 0; index < regMemList.Count; index++)
+                        {
+                            if ((regMemList[index].PBmembershipID == idCheck) && (regMemList[index].PBmembershipID == idCheck))
+                            {
+                                Console.WriteLine("Please enter the total of the transaction");
+                                double transactionAmmount = Convert.ToDouble(Console.ReadLine());
+
+                                double AmmountMonth = regMemList[index].PBammountThisMonth;
+                                regMemList[index].PBammountThisMonth = RegularMember.returns(transactionAmmount, AmmountMonth);
+
+
+                                found = true;
+                            }
+
+                        }  // end foreach
+                        if (found)
+                            Console.WriteLine("Return successfull!");
+                        else
+                            Console.WriteLine("Return failed, please try again.");
+
                     }
                     if (menuTypeChoiceSt == "A" || menuTypeChoiceSt == "a")
                     {
@@ -154,8 +202,23 @@ namespace MemeberShipProg
 
                     if (menuChoiceString == "C" || menuChoiceString == "c")
                     {
-                        // C logic
+                        Console.WriteLine("Please enter a new member ID");
+                        string? newID = Console.ReadLine();
+                        Console.WriteLine("Please enter new Email");
+                        string? NewEmail = Console.ReadLine();
+                        Console.WriteLine("Please enter the Account type");
+                        string? newAccountTy = Console.ReadLine();
+                        Console.WriteLine("Please enter the ammount spent this month");
+                        double newAmmountMonth = Convert.ToDouble(Console.ReadLine());
+
+                        if(newAccountTy == "regular")
+                        {
+                            regMemList.Add(new RegularMember(newID, NewEmail, newAccountTy, newAmmountMonth));
+                            Console.WriteLine("New Rrgular member added!");
+                        }
                     }
+                    //end of C choice
+
                     if (menuChoiceString == "R" || menuChoiceString == "r")
                     {
                         foreach (RegularMember aMember in regMemList)
@@ -164,14 +227,20 @@ namespace MemeberShipProg
                         }
                         Console.ReadKey();
                     }
+                    //end of R choice
+
                     if (menuChoiceString == "U" || menuChoiceString == "u")
                     {
                         // U logic
                     }
+                    //end of U choice
+
                     if (menuChoiceString == "D" || menuChoiceString == "d")
                     {
                         // D logic
                     }
+                    // end of d choice 
+                    
                     else
                     {
                         Console.Write("Returning to main menu");

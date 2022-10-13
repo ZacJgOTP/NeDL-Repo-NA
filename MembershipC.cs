@@ -60,12 +60,12 @@ namespace MemeberShipProg
             Console.WriteLine("transaction successful new account balance = " + AmmounThisMonth);
 
         }
-        static double purchase(double PurcPrice, double AmmounThisMonth)
+        public static double purchase(double PurcPrice, double AmmounThisMonth)
         {
             double Total = PurcPrice + AmmounThisMonth;
             return Total;
         }
-        static double returns(double PurcPrice, double AmmounThisMonth)
+        public static double returns(double PurcPrice, double AmmounThisMonth)
         {
             double TotalReturn = AmmounThisMonth - PurcPrice;
             return TotalReturn;
