@@ -61,6 +61,7 @@ namespace MemeberShipProg
             } while (!menuTypeChoice);
             //----------------------------------- END OF MAIN MENU--------------------------------------------\\
 
+            //----------------------START OF TRANSACTION MENU----------------------------\\
             if (menuTypeChoiceSt == "T" || menuTypeChoiceSt == "t")
             {
 
@@ -91,7 +92,9 @@ namespace MemeberShipProg
                         }
 
                     } while (!transactionChoice);
+                    //----------------------END OF TRANSACTION MENU----------------------------\\
 
+                    //----------------------START OF L MENU----------------------------\\
                     if (menuTypeChoiceSt == "L" || menuTypeChoiceSt == "l")
                     {
                         foreach (RegularMember aMember in regMemList)
@@ -99,6 +102,9 @@ namespace MemeberShipProg
                             Console.WriteLine(aMember);
                         }
                     }
+                    //----------------------END OF L MENU----------------------------\\
+
+                    //----------------------START OF P MENU----------------------------\\
                     if (menuTypeChoiceSt == "P" || menuTypeChoiceSt == "p")
                     {
                         string? idCheck;
@@ -108,7 +114,7 @@ namespace MemeberShipProg
 
                         for (int index = 0; index < regMemList.Count; index++)
                         {
-                            if ((regMemList[index].PBmembershipID == idCheck) && (regMemList[index].PBmembershipID == idCheck))
+                            if ((regMemList[index].PBmembershipID == idCheck))
                             {
                                 Console.WriteLine("Please enter the total of the transaction");
                                 double transactionAmmount = Convert.ToDouble(Console.ReadLine());
@@ -127,6 +133,9 @@ namespace MemeberShipProg
                             Console.WriteLine("Purchase failed, please try again.");
 
                     }
+                    //----------------------END OF P MENU----------------------------\\
+
+                    //----------------------START OF T MENU----------------------------\\
                     if (menuTypeChoiceSt == "T" || menuTypeChoiceSt == "t")
                     {
                         string? idCheck;
@@ -136,7 +145,7 @@ namespace MemeberShipProg
 
                         for (int index = 0; index < regMemList.Count; index++)
                         {
-                            if ((regMemList[index].PBmembershipID == idCheck) && (regMemList[index].PBmembershipID == idCheck))
+                            if ((regMemList[index].PBmembershipID == idCheck))
                             {
                                 Console.WriteLine("Please enter the total of the transaction");
                                 double transactionAmmount = Convert.ToDouble(Console.ReadLine());
@@ -155,10 +164,30 @@ namespace MemeberShipProg
                             Console.WriteLine("Return failed, please try again.");
 
                     }
+
+                    //----------------------END OF T MENU----------------------------\\
+
+
+                    //----------------------START OF A MENU----------------------------\\
                     if (menuTypeChoiceSt == "A" || menuTypeChoiceSt == "a")
                     {
-                        
+                        string? idCheck;
+                        Console.WriteLine("Please enter the member ID to find the account");
+                        idCheck = Console.ReadLine();
+
+                        for (int index = 0; index < regMemList.Count; index++)
+                        {
+                            if ((regMemList[index].PBmembershipID == idCheck))
+                            {
+                                double cashBackApp = regMemList[index].cashbackreg();
+                                Console.WriteLine("Cash-back reward request for membership" + regMemList[index].PBmembershipID + " in the amount of " + cashBackApp + " has been made.");
+                            }
+                            regMemList[index].PBCashbackAmmount = 0;
+                        }
+
                     }
+
+                    //----------------------END OF A MENU----------------------------\\
                     else
                     {
                         Console.WriteLine("Exiting program");
@@ -166,7 +195,7 @@ namespace MemeberShipProg
 
                 } while (!(transactionChoiceSt == "Q") && !(transactionChoiceSt == "q"));
 
-                //----------------------------------- END OF TRANSACTION MENU --------------------------------------------\\
+
 
             }
 
@@ -178,7 +207,7 @@ namespace MemeberShipProg
                 {
                     do
                     {
-
+                        //----------------------START OF CHOICE MENU----------------------------\\
                         Console.WriteLine("C: Create a new membership");
                         Console.WriteLine("R: Read the list of members and displays them");
                         Console.WriteLine("U: Update the information on a member");
@@ -199,7 +228,10 @@ namespace MemeberShipProg
                         }
 
                     } while (!bMenuChoice);
+                    //----------------------START OF CHOICE MENU----------------------------\\
 
+
+                    //----------------------START OF C MENU----------------------------\\
                     if (menuChoiceString == "C" || menuChoiceString == "c")
                     {
                         Console.WriteLine("Please enter a new member ID");
@@ -217,8 +249,10 @@ namespace MemeberShipProg
                             Console.WriteLine("New Rrgular member added!");
                         }
                     }
-                    //end of C choice
+                    //----------------------END OF C MENU----------------------------\\
 
+
+                    //----------------------START OF R MENU----------------------------\\
                     if (menuChoiceString == "R" || menuChoiceString == "r")
                     {
                         foreach (RegularMember aMember in regMemList)
@@ -227,19 +261,90 @@ namespace MemeberShipProg
                         }
                         Console.ReadKey();
                     }
-                    //end of R choice
+                    //----------------------END OF R MENU----------------------------\\
 
+
+                    //----------------------START OF U MENU----------------------------\\
                     if (menuChoiceString == "U" || menuChoiceString == "u")
                     {
-                        // U logic
-                    }
-                    //end of U choice
 
+                        string? idCheck;
+                        bool found = false;
+                        Console.WriteLine("Please enter the member ID to find the account");
+                        idCheck = Console.ReadLine();
+
+                        for (int index = 0; index < regMemList.Count; index++)
+                        {
+                            if ((regMemList[index].PBmembershipID == idCheck))
+                            {
+                                Console.WriteLine("ID found please enter a char for what you would like to change. Options are as follows");
+                                Console.WriteLine("E: alter the email, AS: Ammount spent this month");
+                                string? alterVal = Console.ReadLine();
+                                if (alterVal == "E" || alterVal == "e")
+                                {
+                                    Console.WriteLine("Please enter new email");
+                                    regMemList[index].PBemailAddress = Console.ReadLine();
+                                    found = true;
+                                }
+
+                                if (alterVal == "AS" || alterVal == "as")
+                                {
+                                    Console.WriteLine("Please enter new ammount spent this month");
+                                    regMemList[index].PBammountThisMonth = Convert.ToDouble(Console.ReadLine());
+                                    found = true;
+                                }
+                            }
+                        }  // end foreach  
+                        if (found)
+                            Console.WriteLine("Record has been updated");
+                        else
+                            Console.WriteLine("ID not found no record updated");
+
+                    }
+                    //----------------------END OF U MENU----------------------------\\
+
+
+                    //----------------------START OF D MENU----------------------------\\
                     if (menuChoiceString == "D" || menuChoiceString == "d")
                     {
-                        // D logic
-                    }
-                    // end of d choice 
+                        string? idCheck;
+                        bool found = false;
+                        bool passwordB = false;
+                        string? passwordSt;
+
+                        Console.WriteLine("Welcome to the deletion menu if you would like to delete a member please enter the pasword now: ");
+                        passwordSt = Console.ReadLine();
+                        if(passwordSt == "8453")
+                        {
+                            passwordB = true;
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("Invalid password. Exiting now");
+                        }
+
+                        if (passwordB)
+                        {
+                        Console.WriteLine("Please enter the member ID to find the account");
+                        idCheck = Console.ReadLine();
+
+                        for (int index = 0; index < regMemList.Count; index++)
+                        {
+                            if ((regMemList[index].PBmembershipID == idCheck))
+                            {
+                               regMemList.RemoveAt(index);
+                               found = true;
+                            }
+                        }
+                        if(found)
+                            Console.WriteLine("Member deleted");
+                        }
+                        else
+                        break;
+                    }   
+                    //----------------------END OF D MENU----------------------------\\ 
+
 
                     else
                     {

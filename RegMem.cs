@@ -1,14 +1,15 @@
 namespace MemeberShipProg
 {
-    class RegularMember : MemberShip, ICashback
+    class RegularMember : MemberShip
     {
         public double Cashback = .05;
-
-
-        public double newCashback()
+        private double cashBackAmmount = 0;
+        public double PBCashbackAmmount
         {
-            return annualRate;
+            get { return cashBackAmmount; }
+            set { cashBackAmmount = value; }
         }
+
         public RegularMember() : base()
         {
 
@@ -19,8 +20,13 @@ namespace MemeberShipProg
         }
         public string Tostring()
         {
-            return base.ToString() + "| MemberID : " + PBmembershipID + "| Member Email Contact : " + PBemailAddress + "| Member type :" + PBmembershipType + "| Ammount this month" + PBammountThisMonth + "| Cash back percentage : " + newCashback() + "| Ammount this month : " + PBammountThisMonth + "| Annual Fee: " + annualRate;
+            return base.ToString() + "| MemberID : " + PBmembershipID + "| Member Email Contact : " + PBemailAddress + "| Member type :" + PBmembershipType + "| Ammount this month" + PBammountThisMonth + "| Cash back percentage : " + Cashback + "| Ammount this month : " + PBammountThisMonth + "| Annual Fee: " + annualRate;
         }
-
+        
+        public double cashbackreg()
+        {
+            double PBcashBackAmmount = Cashback * PBammountThisMonth;
+            return PBcashBackAmmount;
+        }
     }// end of class regmem
 }// end of namespcae
