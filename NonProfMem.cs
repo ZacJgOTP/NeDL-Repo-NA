@@ -3,7 +3,7 @@ namespace MemeberShipProg
     class NonProfMember : MemberShip,IAnnual,ICashback
     {
         public double Cashback = .1;
-        public double annualRate = .25;
+        
 
        /*  public double PBCashBack
         {
