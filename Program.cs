@@ -23,7 +23,7 @@ namespace MemeberShipProg
             //-----------------CONTAINER FOR LIST VARIABLES------------------------------\\
             List<RegularMember> regMemList = new List<RegularMember>();
 
-            //regMemList.Add(new RegularMember("485454", "TEST.Email@email.com", "Regular", 7775, .2, .25)); //Annual Fee is .25 and cashback is .2
+            regMemList.Add(new RegularMember("485454", "TEST.Email@email.com", "Regular", 7775));
             regMemList.Add(new RegularMember("485445", "TEST.Email@email.com", "Regular", 7456));
 
 
@@ -157,7 +157,7 @@ namespace MemeberShipProg
                     }
                     if (menuTypeChoiceSt == "A" || menuTypeChoiceSt == "a")
                     {
-                        // apply cashback rewards
+                        
                     }
                     else
                     {
@@ -211,7 +211,7 @@ namespace MemeberShipProg
                         Console.WriteLine("Please enter the ammount spent this month");
                         double newAmmountMonth = Convert.ToDouble(Console.ReadLine());
 
-                        if(newAccountTy == "regular")
+                        if (newAccountTy == "regular")
                         {
                             regMemList.Add(new RegularMember(newID, NewEmail, newAccountTy, newAmmountMonth));
                             Console.WriteLine("New Rrgular member added!");
@@ -240,7 +240,7 @@ namespace MemeberShipProg
                         // D logic
                     }
                     // end of d choice 
-                    
+
                     else
                     {
                         Console.Write("Returning to main menu");

@@ -6,6 +6,7 @@ namespace MemeberShipProg
         private string? emailAddress;
         private string? membershipType;
         private double AmmounThisMonth = 0;
+        public double annualRate = 120;
 
 
         public double PBammountThisMonth
