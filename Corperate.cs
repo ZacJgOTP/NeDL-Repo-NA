@@ -3,7 +3,7 @@ namespace MemeberShipProg
     class CorperateMember : MemberShip
     {
         public double Cashback = .1;
-        
+
 
         public CorperateMember() : base()
         {
@@ -17,7 +17,7 @@ namespace MemeberShipProg
         {
             return base.ToString() + "| MemberID : " + PBmembershipID + "| Member Email Contact : " + PBemailAddress + "| Member type :" + PBmembershipType + "| Ammount this month" + PBammountThisMonth + "| Cash back percentage : " + Cashback + "| Ammount this month : " + PBammountThisMonth + "| Annual Fee: " + annualRate;
         }
-        
+
         public double cashbackreg()
         {
             double PBcashBackAmmount = Cashback * annualRate;
