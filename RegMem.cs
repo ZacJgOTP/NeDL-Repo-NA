@@ -3,12 +3,7 @@ namespace MemeberShipProg
     class RegularMember : MemberShip
     {
         public double Cashback = .05;
-        private double cashBackAmmount = 0;
-        public double PBCashbackAmmount
-        {
-            get { return cashBackAmmount; }
-            set { cashBackAmmount = value; }
-        }
+       
 
         public RegularMember() : base()
         {
@@ -25,8 +20,9 @@ namespace MemeberShipProg
         
         public double cashbackreg()
         {
-            double PBcashBackAmmount = Cashback * PBammountThisMonth;
+            double PBcashBackAmmount = Cashback * annualRate;
             return PBcashBackAmmount;
         }
+        
     }// end of class regmem
 }// end of namespcae

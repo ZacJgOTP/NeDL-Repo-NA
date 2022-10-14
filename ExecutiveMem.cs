@@ -1,32 +1,38 @@
 namespace MemeberShipProg
 {
-    class ExecutiveMember : MemberShip, ICashback, IAnnual
+    class ExecutiveMember : MemberShip
     {
-        private double tier = 0;
-        public double Cashback = .05;
-        public double annualRate1 = 900;
-        public double PBTier
+        private double tier = 0; 
+        public double Cashback1 = .25;
+        public double cashBack2 = .5;
+        
+         public double PBtier
         {
             get { return tier; }
             set { tier = value; }
         }
-        public ExecutiveMember(string NewMemID, string NewMemEmail, string newMemTy, double newAmmountMonth, double newCashback, double newTier) : base(NewMemID, NewMemEmail, newMemTy, newAmmountMonth)
+        public ExecutiveMember() : base()
+        {
+
+        }
+         public ExecutiveMember(string NewMemID, string NewEmail, string newMemTy, double newAmmountMonth,double newTier) : base(NewMemID, NewEmail, newMemTy, newAmmountMonth)
         {
             tier = newTier;
         }
-        public double anRate()
-        {
-            return annualRate1;
-        }
-        public double newCashback()
-        {
-            return Cashback;
-        }
 
-        public string Tostring()
+      public string Tostring()
         {
-            return base.ToString() + "| MemberID : " + PBmembershipID + "| Member Email Contact : " + PBemailAddress + "| Member type :" + PBmembershipType +  "| Tier of Exec account: "+tier+ "| Ammount this month" + PBammountThisMonth + "| Cash back percentage : " + newCashback() + "| Ammount this month : " + PBammountThisMonth + "| Annual Fee: " + annualRate1;
+            return base.ToString() + "| MemberID : " + PBmembershipID + "| Member Email Contact : " + PBemailAddress + "| Member type :" + PBmembershipType +"| Tier of executive account "+ PBtier+ "| Ammount this month" + PBammountThisMonth +  "| Ammount this month : " + PBammountThisMonth + "| Annual Fee: " + annualRate;
         }
-
+        public double cashbackregteir1()
+        {
+            double PBcashBackAmmount = Cashback1 * annualRate;
+            return PBcashBackAmmount;
+        }
+         public double cashbackregteir2()
+        {
+            double PBcashBackAmmount = cashBack2 * annualRate;
+            return PBcashBackAmmount;
+        }
     }// end of class regmem
 }// end of namespcae 

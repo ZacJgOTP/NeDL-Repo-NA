@@ -7,6 +7,12 @@ namespace MemeberShipProg
         private string? membershipType;
         private double AmmounThisMonth = 0;
         public double annualRate = 120;
+        private double cashBackAmmount = 0;
+        public double PBCashbackAmmount
+        {
+            get { return cashBackAmmount; }
+            set { cashBackAmmount = value; }
+        }
 
 
         public double PBammountThisMonth

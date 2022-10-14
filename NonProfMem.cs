@@ -1,32 +1,27 @@
 namespace MemeberShipProg
 {
-    class NonProfMember : MemberShip,IAnnual,ICashback
+    class NonProfMember : MemberShip
     {
-        public double Cashback = .1;
+        public double Cashback = .05;
         
 
-       /*  public double PBCashBack
+        public NonProfMember() : base()
         {
-            get { return Cashback; }
-            set { Cashback = value; }
-        }
-        public RegularMember(string NewMemID, string NewMemEmail, string newMemTy, double newAmmountMonth, double newCashback) : base(NewMemID, NewMemEmail, newMemTy, newAmmountMonth)
-        {
-            Cashback = newCashback;
-        } */
-        public double anRate()
-        {
-            return annualRate;
-        }
-        public double newCashback()
-        {
-            return annualRate;
-        }
 
+        }
+        public NonProfMember(string NewMemID, string NewEmail, string newMemTy, double newAmmountMonth) : base(NewMemID, NewEmail, newMemTy, newAmmountMonth)
+        {
+
+        }
         public string Tostring()
         {
-            return base.ToString() + "| MemberID : " + PBmembershipID + "| Member Email Contact : " + PBemailAddress + "| Member type :" + PBmembershipType + "| Ammount this month" + PBammountThisMonth + "| Cash back percentage : " + newCashback() + "| Ammount this month : " + PBammountThisMonth + "| Annual Fee: " + anRate();
+            return base.ToString() + "| MemberID : " + PBmembershipID + "| Member Email Contact : " + PBemailAddress + "| Member type :" + PBmembershipType + "| Ammount this month" + PBammountThisMonth + "| Cash back percentage : " + Cashback + "| Ammount this month : " + PBammountThisMonth + "| Annual Fee: " + annualRate;
         }
-
+        
+        public double cashbackreg()
+        {
+            double PBcashBackAmmount = Cashback * PBammountThisMonth;
+            return PBcashBackAmmount;
+        }
     }// end of class regmem
 }// end of namespcae
