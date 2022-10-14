@@ -21,10 +21,42 @@ namespace MemeberShipProg
 
 
             //-----------------CONTAINER FOR LIST VARIABLES------------------------------\\
+
+
+            //-----------------------REGMEM LIST VARIABLES------------------------------\\
             List<RegularMember> regMemList = new List<RegularMember>();
 
-            regMemList.Add(new RegularMember("485454", "TEST.Email@email.com", "Regular", 7775));
-            regMemList.Add(new RegularMember("485445", "TEST.Email@email.com", "Regular", 7456));
+            regMemList.Add(new RegularMember("481", "TEST.Email@email.com", "Regular", 7775));
+            regMemList.Add(new RegularMember("485", "TEST.Email@email.com", "Regular", 7456));
+            //-----------------------END REGMEM LIST VARIABLES---------------------------\\
+
+
+            //-----------------------EXECUTIVE MEM LIST VARIABLES------------------------\\
+            List<ExecutiveMember> ExecMemList = new List<ExecutiveMember>();
+            //  memID  memEmail              memType     memMonth Memtier
+            ExecMemList.Add(new ExecutiveMember("458", "TEST.Email@email.com", "Executive", 45576, 1));
+            ExecMemList.Add(new ExecutiveMember("558", "TEST.Email@email.com", "Executive", 4567, 2));
+            //-----------------------END EXECUTIVE MEM LIST VARIABLES--------------------\\
+
+
+            //-----------------------NONPROF MEM LIST VARIABLES--------------------------\\
+            List<NonProfMember> NonprofMemList = new List<NonProfMember>();
+
+            NonprofMemList.Add(new NonProfMember("458", "TEST.Email@email.com", "Executive", 45576, "Military"));
+            NonprofMemList.Add(new NonProfMember("458", "TEST.Email@email.com", "Executive", 45576, "Education"));
+            NonprofMemList.Add(new NonProfMember("458", "TEST.Email@email.com", "Executive", 45576, "None"));
+
+
+            //-----------------------END NONPROF MEM LIST VARIABLES----------------------\\
+
+
+            //-----------------------CORP MEM LIST VARIABLES-----------------------------\\
+            List<CorperateMember> CorpMemList = new List<CorperateMember>();
+
+            CorpMemList.Add(new CorperateMember("324", "TEST.Email@email.com", "Corp", 7247));
+            CorpMemList.Add(new CorperateMember("327", "TEST.Email@email.com", "Corp", 7127));
+
+            //-----------------------END CORP MEM LIST VARIABLES-------------------------\\
 
 
             //-----------------CONTAINER FOR LIST VARIABLES------------------------------\\
@@ -314,7 +346,7 @@ namespace MemeberShipProg
 
                         Console.WriteLine("Welcome to the deletion menu if you would like to delete a member please enter the pasword now: ");
                         passwordSt = Console.ReadLine();
-                        if(passwordSt == "8453")
+                        if (passwordSt == "8453")
                         {
                             passwordB = true;
                         }
@@ -326,23 +358,23 @@ namespace MemeberShipProg
 
                         if (passwordB)
                         {
-                        Console.WriteLine("Please enter the member ID to find the account");
-                        idCheck = Console.ReadLine();
+                            Console.WriteLine("Please enter the member ID to find the account");
+                            idCheck = Console.ReadLine();
 
-                        for (int index = 0; index < regMemList.Count; index++)
-                        {
-                            if ((regMemList[index].PBmembershipID == idCheck))
+                            for (int index = 0; index < regMemList.Count; index++)
                             {
-                               regMemList.RemoveAt(index);
-                               found = true;
+                                if ((regMemList[index].PBmembershipID == idCheck))
+                                {
+                                    regMemList.RemoveAt(index);
+                                    found = true;
+                                }
                             }
-                        }
-                        if(found)
-                            Console.WriteLine("Member deleted");
+                            if (found)
+                                Console.WriteLine("Member deleted");
                         }
                         else
-                        break;
-                    }   
+                            break;
+                    }
                     //----------------------END OF D MENU----------------------------\\ 
 
 
