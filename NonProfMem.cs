@@ -24,10 +24,16 @@ namespace MemeberShipProg
             return base.ToString() + "| MemberID : " + PBmembershipID + "| Member Email Contact : " + PBemailAddress + "| Member type :" + PBmembershipType + "| Special Org: " + PBspecialOrg + "| Ammount this month" + PBammountThisMonth + "| Cash back percentage : " + Cashback + "| Ammount this month : " + PBammountThisMonth + "| Annual Fee: " + annualRate;
         }
 
-        public double cashbackreg()
+        public double cashbackNonSp()
+        {
+            double PBcashBackAmmount = ((Cashback * PBammountThisMonth)*2);
+            return PBcashBackAmmount;
+        }
+        public double cashbackNon()
         {
             double PBcashBackAmmount = Cashback * PBammountThisMonth;
             return PBcashBackAmmount;
         }
+
     }// end of class regmem
 }// end of namespcae

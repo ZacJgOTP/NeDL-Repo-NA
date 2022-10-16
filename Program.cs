@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MemeberShipProg
 {
@@ -22,7 +23,16 @@ namespace MemeberShipProg
 
             //-----------------CONTAINER FOR LIST VARIABLES------------------------------\\
 
+            List<MemberShip> MemList = new List<MemberShip>();
+            MemList.Add(new RegularMember("481", "TEST.Email@email.com", "Regular", 7775));
+            MemList.Add(new ExecutiveMember("454", "TEST.Email@email.com", "Executive", 45576, 1));
+            MemList.Add(new NonProfMember("458", "TEST.Email@email.com", "NonProf", 45576, "Military"));
+            MemList.Add(new CorperateMember("324", "TEST.Email@email.com", "Corp", 7247)); 
 
+            foreach(MemberShip m in MemList)
+            {
+                Console.WriteLine(m);
+            }    
             //-----------------------REGMEM LIST VARIABLES------------------------------\\
             List<RegularMember> regMemList = new List<RegularMember>();
 
@@ -34,7 +44,7 @@ namespace MemeberShipProg
             //-----------------------EXECUTIVE MEM LIST VARIABLES------------------------\\
             List<ExecutiveMember> ExecMemList = new List<ExecutiveMember>();
             //  memID  memEmail              memType     memMonth Memtier
-            ExecMemList.Add(new ExecutiveMember("458", "TEST.Email@email.com", "Executive", 45576, 1));
+            ExecMemList.Add(new ExecutiveMember("454", "TEST.Email@email.com", "Executive", 45576, 1));
             ExecMemList.Add(new ExecutiveMember("558", "TEST.Email@email.com", "Executive", 4567, 2));
             //-----------------------END EXECUTIVE MEM LIST VARIABLES--------------------\\
 
@@ -42,9 +52,9 @@ namespace MemeberShipProg
             //-----------------------NONPROF MEM LIST VARIABLES--------------------------\\
             List<NonProfMember> NonprofMemList = new List<NonProfMember>();
 
-            NonprofMemList.Add(new NonProfMember("458", "TEST.Email@email.com", "Executive", 45576, "Military"));
-            NonprofMemList.Add(new NonProfMember("458", "TEST.Email@email.com", "Executive", 45576, "Education"));
-            NonprofMemList.Add(new NonProfMember("458", "TEST.Email@email.com", "Executive", 45576, "None"));
+            NonprofMemList.Add(new NonProfMember("458", "TEST.Email@email.com", "NonProf", 45576, "Military"));
+            NonprofMemList.Add(new NonProfMember("448", "TEST.Email@email.com", "NonProf", 45576, "Education"));
+            NonprofMemList.Add(new NonProfMember("489", "TEST.Email@email.com", "NonProf", 45576, "None"));
 
 
             //-----------------------END NONPROF MEM LIST VARIABLES----------------------\\
@@ -120,24 +130,39 @@ namespace MemeberShipProg
 
                         if (!transactionChoice)
                         {
-                            Console.WriteLine("Invalid selection! Please enter a valid character");
+                            Console.WriteLine("Invalid selection! Please enter a valid character. Please press any key to coninue");
+                            Console.ReadKey();
                         }
 
                     } while (!transactionChoice);
                     //----------------------END OF TRANSACTION MENU----------------------------\\
 
                     //----------------------START OF L MENU----------------------------\\
-                    if (menuTypeChoiceSt == "L" || menuTypeChoiceSt == "l")
+                    if (transactionChoiceSt == "L" || transactionChoiceSt == "l")
                     {
-                        foreach (RegularMember aMember in regMemList)
+                        foreach (RegularMember anMember in regMemList)
                         {
-                            Console.WriteLine(aMember);
+                            Console.WriteLine(anMember);
                         }
+                        foreach (ExecutiveMember anMember in ExecMemList)
+                        {
+                            Console.WriteLine(anMember);
+                        }
+                        foreach (NonProfMember anMember in NonprofMemList)
+                        {
+                            Console.WriteLine(anMember);
+                        }
+                        foreach (CorperateMember anMember in CorpMemList)
+                        {
+                            Console.WriteLine(anMember);
+                        }
+                        Console.WriteLine("Press any key to continue");
+                        Console.ReadKey();
                     }
                     //----------------------END OF L MENU----------------------------\\
 
                     //----------------------START OF P MENU----------------------------\\
-                    if (menuTypeChoiceSt == "P" || menuTypeChoiceSt == "p")
+                    if (transactionChoiceSt == "P" || transactionChoiceSt == "p")
                     {
                         string? idCheck;
                         bool found = false;
@@ -153,6 +178,39 @@ namespace MemeberShipProg
 
                                 double AmmountMonth = regMemList[index].PBammountThisMonth;
                                 regMemList[index].PBammountThisMonth = RegularMember.purchase(transactionAmmount, AmmountMonth);
+
+
+                                found = true;
+                            }
+                            else if ((ExecMemList[index].PBmembershipID == idCheck))
+                            {
+                                Console.WriteLine("Please enter the total of the transaction");
+                                double transactionAmmount = Convert.ToDouble(Console.ReadLine());
+
+                                double AmmountMonth = ExecMemList[index].PBammountThisMonth;
+                                ExecMemList[index].PBammountThisMonth = RegularMember.purchase(transactionAmmount, AmmountMonth);
+
+
+                                found = true;
+                            }
+                            else if ((NonprofMemList[index].PBmembershipID == idCheck))
+                            {
+                                Console.WriteLine("Please enter the total of the transaction");
+                                double transactionAmmount = Convert.ToDouble(Console.ReadLine());
+
+                                double AmmountMonth = NonprofMemList[index].PBammountThisMonth;
+                                NonprofMemList[index].PBammountThisMonth = RegularMember.purchase(transactionAmmount, AmmountMonth);
+
+
+                                found = true;
+                            }
+                            else if ((CorpMemList[index].PBmembershipID == idCheck))
+                            {
+                                Console.WriteLine("Please enter the total of the transaction");
+                                double transactionAmmount = Convert.ToDouble(Console.ReadLine());
+
+                                double AmmountMonth = CorpMemList[index].PBammountThisMonth;
+                                CorpMemList[index].PBammountThisMonth = RegularMember.purchase(transactionAmmount, AmmountMonth);
 
 
                                 found = true;
@@ -188,12 +246,50 @@ namespace MemeberShipProg
 
                                 found = true;
                             }
+                            else if ((ExecMemList[index].PBmembershipID == idCheck))
+                            {
+                                Console.WriteLine("Please enter the total of the transaction");
+                                double transactionAmmount = Convert.ToDouble(Console.ReadLine());
+
+                                double AmmountMonth = ExecMemList[index].PBammountThisMonth;
+                                ExecMemList[index].PBammountThisMonth = RegularMember.returns(transactionAmmount, AmmountMonth);
+
+
+                                found = true;
+                            }
+                            else if ((NonprofMemList[index].PBmembershipID == idCheck))
+                            {
+                                Console.WriteLine("Please enter the total of the transaction");
+                                double transactionAmmount = Convert.ToDouble(Console.ReadLine());
+
+                                double AmmountMonth = NonprofMemList[index].PBammountThisMonth;
+                                NonprofMemList[index].PBammountThisMonth = RegularMember.returns(transactionAmmount, AmmountMonth);
+
+
+                                found = true;
+                            }
+                            else if ((CorpMemList[index].PBmembershipID == idCheck))
+                            {
+                                Console.WriteLine("Please enter the total of the transaction");
+                                double transactionAmmount = Convert.ToDouble(Console.ReadLine());
+
+                                double AmmountMonth = CorpMemList[index].PBammountThisMonth;
+                                CorpMemList[index].PBammountThisMonth = RegularMember.returns(transactionAmmount, AmmountMonth);
+
+
+                                found = true;
+                            }
+
 
                         }  // end foreach
                         if (found)
                             Console.WriteLine("Return successfull!");
                         else
-                            Console.WriteLine("Return failed, please try again.");
+                        {
+                            Console.WriteLine("Return Failed Please try again");
+                            Console.WriteLine("Please enter member Id");
+                            idCheck = Console.ReadLine();
+                        }
 
                     }
 
@@ -214,22 +310,50 @@ namespace MemeberShipProg
                                 double cashBackApp = regMemList[index].cashbackreg();
                                 Console.WriteLine("Cash-back reward request for membership" + regMemList[index].PBmembershipID + " in the amount of " + cashBackApp + " has been made.");
                             }
-                            regMemList[index].PBCashbackAmmount = 0;
+
+                            else if ((ExecMemList[index].PBmembershipID == idCheck))
+                            {
+                                if (ExecMemList[index].PBtier == 1)
+                                {
+                                    double cashBackApp = ExecMemList[index].cashbackregteir1();
+                                    Console.WriteLine("Cash-back reward request for membership" + ExecMemList[index].PBmembershipID + " in the amount of " + cashBackApp + " has been made.");
+                                }
+                                else if (ExecMemList[index].PBtier == 2)
+                                {
+                                    double cashBackApp = ExecMemList[index].cashbackregteir2();
+                                    Console.WriteLine("Cash-back reward request for membership" + ExecMemList[index].PBmembershipID + " in the amount of " + cashBackApp + " has been made.");
+                                }
+
+                            }
+                            else if ((NonprofMemList[index].PBmembershipID == idCheck))
+                            {
+                                if (NonprofMemList[index].PBspecialOrg == "Military")
+                                {
+                                    double cashBackApp = NonprofMemList[index].cashbackNonSp();
+                                    Console.WriteLine("Cash-back reward request for membership" + NonprofMemList[index].PBmembershipID + " in the amount of " + cashBackApp + " has been made.");
+                                }
+                               else if (NonprofMemList[index].PBspecialOrg == "Education")
+                                {
+                                    double cashBackApp = NonprofMemList[index].cashbackNonSp();
+                                    Console.WriteLine("Cash-back reward request for membership" + NonprofMemList[index].PBmembershipID + " in the amount of " + cashBackApp + " has been made.");
+                                }
+                               else if (NonprofMemList[index].PBspecialOrg == "None")
+                                {
+                                    double cashBackApp = NonprofMemList[index].cashbackNon();
+                                    Console.WriteLine("Cash-back reward request for membership" + NonprofMemList[index].PBmembershipID + " in the amount of " + cashBackApp + " has been made.");
+                                }
+                            }
+                            else if ((CorpMemList[index].PBmembershipID == idCheck))
+                            {
+                                double cashBackApp = CorpMemList[index].cashbackreg();
+                                Console.WriteLine("Cash-back reward request for membership" + CorpMemList[index].PBmembershipID + " in the amount of " + cashBackApp + " has been made.");
+                            }
+
                         }
-
                     }
-
-                    //----------------------END OF A MENU----------------------------\\
-                    else
-                    {
-                        Console.WriteLine("Exiting program");
-                    }
-
+                    //regMemList[index].PBCashbackAmmount = 0;
                 } while (!(transactionChoiceSt == "Q") && !(transactionChoiceSt == "q"));
-
-
-
-            }
+            }       //----------------------END OF A MENU----------------------------\\
 
             //----------------------------------- END OF TRANSACTION MENU IF STATMENT --------------------------------------------\\
 
@@ -240,7 +364,7 @@ namespace MemeberShipProg
                     do
                     {
                         //----------------------START OF CHOICE MENU----------------------------\\
-                        Console.WriteLine("C: Create a new membership");
+                        Console.WriteLine(" C: Create a new membership");
                         Console.WriteLine("R: Read the list of members and displays them");
                         Console.WriteLine("U: Update the information on a member");
                         Console.WriteLine("D: Delete a member from the list");
@@ -267,18 +391,40 @@ namespace MemeberShipProg
                     if (menuChoiceString == "C" || menuChoiceString == "c")
                     {
                         Console.WriteLine("Please enter a new member ID");
-                        string? newID = Console.ReadLine();
+                        string? newID = (Console.ReadLine());
                         Console.WriteLine("Please enter new Email");
                         string? NewEmail = Console.ReadLine();
-                        Console.WriteLine("Please enter the Account type");
+                        Console.WriteLine("Please enter the Account type, account type options are Regular, NonProf, Executive, and Corperate");
                         string? newAccountTy = Console.ReadLine();
                         Console.WriteLine("Please enter the ammount spent this month");
                         double newAmmountMonth = Convert.ToDouble(Console.ReadLine());
 
-                        if (newAccountTy == "regular")
+                        if (newAccountTy == "Regular")
                         {
                             regMemList.Add(new RegularMember(newID, NewEmail, newAccountTy, newAmmountMonth));
-                            Console.WriteLine("New Rrgular member added!");
+                            Console.WriteLine("New Regular member added!");
+                        }
+                        else if (newAccountTy == "Executive")
+                        {
+                            double tier = 0;
+                            Console.WriteLine("Please enter the teir of the account");
+                            tier = Convert.ToDouble(Console.ReadLine());
+
+                            ExecMemList.Add(new ExecutiveMember(newID, NewEmail, newAccountTy, newAmmountMonth, tier));
+                            Console.WriteLine("New Executive member added!");
+                        }
+                        else if (newAccountTy == "NonProf")
+                        {
+                            string? newOrg;
+                            Console.WriteLine("Please enter in if the Org is military or education, if neither type none");
+                            newOrg = Console.ReadLine();
+                            NonprofMemList.Add(new NonProfMember(newID, NewEmail, newAccountTy, newAmmountMonth, newOrg));
+                            Console.WriteLine("New NonProf member added!");
+                        }
+                        else if (newAccountTy == "Corperate")
+                        {
+                            CorpMemList.Add(new CorperateMember(newID, NewEmail, newAccountTy, newAmmountMonth));
+                            Console.WriteLine("New corperate member added!");
                         }
                     }
                     //----------------------END OF C MENU----------------------------\\
@@ -287,10 +433,23 @@ namespace MemeberShipProg
                     //----------------------START OF R MENU----------------------------\\
                     if (menuChoiceString == "R" || menuChoiceString == "r")
                     {
-                        foreach (RegularMember aMember in regMemList)
+                        foreach (RegularMember anMember in regMemList)
                         {
-                            Console.WriteLine(aMember);
+                            Console.WriteLine(anMember);
                         }
+                        foreach (ExecutiveMember anMember in ExecMemList)
+                        {
+                            Console.WriteLine(anMember);
+                        }
+                        foreach (NonProfMember anMember in NonprofMemList)
+                        {
+                            Console.WriteLine(anMember);
+                        }
+                        foreach (CorperateMember anMember in CorpMemList)
+                        {
+                            Console.WriteLine(anMember);
+                        }
+                        Console.WriteLine("Press any key to continue");
                         Console.ReadKey();
                     }
                     //----------------------END OF R MENU----------------------------\\
@@ -324,6 +483,63 @@ namespace MemeberShipProg
                                     Console.WriteLine("Please enter new ammount spent this month");
                                     regMemList[index].PBammountThisMonth = Convert.ToDouble(Console.ReadLine());
                                     found = true;
+                                }
+                                else if ((ExecMemList[index].PBmembershipID == idCheck))
+                                {
+                                    Console.WriteLine("ID found please enter a char for what you would like to change. Options are as follows");
+                                    Console.WriteLine("E: alter the email, AS: Ammount spent this month");
+                                    string? alterVale = Console.ReadLine();
+                                    if (alterVal == "E" || alterVal == "e")
+                                    {
+                                        Console.WriteLine("Please enter new email");
+                                        regMemList[index].PBemailAddress = Console.ReadLine();
+                                        found = true;
+                                    }
+
+                                    if (alterVal == "AS" || alterVal == "as")
+                                    {
+                                        Console.WriteLine("Please enter new ammount spent this month");
+                                        regMemList[index].PBammountThisMonth = Convert.ToDouble(Console.ReadLine());
+                                        found = true;
+                                    }
+                                }
+                                else if ((NonprofMemList[index].PBmembershipID == idCheck))
+                                {
+                                    Console.WriteLine("ID found please enter a char for what you would like to change. Options are as follows");
+                                    Console.WriteLine("E: alter the email, AS: Ammount spent this month");
+                                    string? alterVale = Console.ReadLine();
+                                    if (alterVal == "E" || alterVal == "e")
+                                    {
+                                        Console.WriteLine("Please enter new email");
+                                        regMemList[index].PBemailAddress = Console.ReadLine();
+                                        found = true;
+                                    }
+
+                                    if (alterVal == "AS" || alterVal == "as")
+                                    {
+                                        Console.WriteLine("Please enter new ammount spent this month");
+                                        regMemList[index].PBammountThisMonth = Convert.ToDouble(Console.ReadLine());
+                                        found = true;
+                                    }
+                                }
+                                else if ((CorpMemList[index].PBmembershipID == idCheck))
+                                {
+                                    Console.WriteLine("ID found please enter a char for what you would like to change. Options are as follows");
+                                    Console.WriteLine("E: alter the email, AS: Ammount spent this month");
+                                    string? alterVale = Console.ReadLine();
+                                    if (alterVal == "E" || alterVal == "e")
+                                    {
+                                        Console.WriteLine("Please enter new email");
+                                        regMemList[index].PBemailAddress = Console.ReadLine();
+                                        found = true;
+                                    }
+
+                                    if (alterVal == "AS" || alterVal == "as")
+                                    {
+                                        Console.WriteLine("Please enter new ammount spent this month");
+                                        regMemList[index].PBammountThisMonth = Convert.ToDouble(Console.ReadLine());
+                                        found = true;
+                                    }
                                 }
                             }
                         }  // end foreach  
@@ -368,6 +584,22 @@ namespace MemeberShipProg
                                     regMemList.RemoveAt(index);
                                     found = true;
                                 }
+                                else if ((ExecMemList[index].PBmembershipID == idCheck))
+                                {
+                                    ExecMemList.RemoveAt(index);
+                                    found = true;
+                                }
+                                else if ((NonprofMemList[index].PBmembershipID == idCheck))
+                                {
+                                    NonprofMemList.RemoveAt(index);
+                                    found = true;
+                                }
+                                else if ((CorpMemList[index].PBmembershipID == idCheck))
+                                {
+                                    CorpMemList.RemoveAt(index);
+                                    found = true;
+                                }
+
                             }
                             if (found)
                                 Console.WriteLine("Member deleted");
@@ -386,15 +618,16 @@ namespace MemeberShipProg
 
                 } while (!(menuChoiceString == "Q") && !(menuChoiceString == "q"));
 
-                //----------------------------------- END OF ADMINISTRATION MENU --------------------------------------------\\
 
 
-            }
+            }//----------------------------------- END OF ADMINISTRATION MENU --------------------------------------------\\
+
+
+
             //----------------------------------- END OF ADMINISTRATION MENU IF STATMENT --------------------------------------------\\
 
 
-        }// end of main 
+        }// end of main
 
-    }// end of program
-
+    } // end of program
 }//end of Namespace 

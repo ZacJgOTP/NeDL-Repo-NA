@@ -13,7 +13,7 @@ namespace MemeberShipProg
         {
 
         }
-        public string Tostring()
+        public override string ToString()
         {
             return base.ToString() + "| MemberID : " + PBmembershipID + "| Member Email Contact : " + PBemailAddress + "| Member type :" + PBmembershipType + "| Ammount this month" + PBammountThisMonth + "| Cash back percentage : " + Cashback + "| Ammount this month : " + PBammountThisMonth + "| Annual Fee: " + annualRate;
         }
