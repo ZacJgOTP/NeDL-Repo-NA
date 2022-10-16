@@ -13,3 +13,10 @@ C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\obj\Debug\net6.0\Week 5  comp
 C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\obj\Debug\net6.0\ref\Week 5  competency.dll
 C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\obj\Debug\net6.0\Week 5  competency.pdb
 C:\Users\QAnderson\Desktop\NeDL\Week 5  competency\obj\Debug\net6.0\Week 5  competency.genruntimeconfig.cache
+C:\Users\Noah Anderson\OneDrive - ALLO\Desktop\NeDL\Week5 comp\NeDL-Repo-NA\obj\Debug\net6.0\Week 5  competency.csproj.AssemblyReference.cache
+C:\Users\Noah Anderson\OneDrive - ALLO\Desktop\NeDL\Week5 comp\NeDL-Repo-NA\obj\Debug\net6.0\Week 5  competency.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Noah Anderson\OneDrive - ALLO\Desktop\NeDL\Week5 comp\NeDL-Repo-NA\obj\Debug\net6.0\Week 5  competency.AssemblyInfoInputs.cache
+C:\Users\Noah Anderson\OneDrive - ALLO\Desktop\NeDL\Week5 comp\NeDL-Repo-NA\obj\Debug\net6.0\Week 5  competency.AssemblyInfo.cs
+C:\Users\Noah Anderson\OneDrive - ALLO\Desktop\NeDL\Week5 comp\NeDL-Repo-NA\obj\Debug\net6.0\Week 5  competency.csproj.CoreCompileInputs.cache
+C:\Users\Noah Anderson\OneDrive - ALLO\Desktop\NeDL\Week5 comp\NeDL-Repo-NA\obj\Debug\net6.0\Week 5  competency.dll
+C:\Users\Noah Anderson\OneDrive - ALLO\Desktop\NeDL\Week5 comp\NeDL-Repo-NA\obj\Debug\net6.0\Week 5  competency.pdb

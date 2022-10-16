@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\QAnderson\\Desktop\\NeDL\\Week 5  competency\\Week 5  competency.csproj": {}
+    "C:\\Users\\Noah Anderson\\OneDrive - ALLO\\Desktop\\NeDL\\Week5 comp\\NeDL-Repo-NA\\Week 5  competency.csproj": {}
   },
   "projects": {
-    "C:\\Users\\QAnderson\\Desktop\\NeDL\\Week 5  competency\\Week 5  competency.csproj": {
+    "C:\\Users\\Noah Anderson\\OneDrive - ALLO\\Desktop\\NeDL\\Week5 comp\\NeDL-Repo-NA\\Week 5  competency.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\QAnderson\\Desktop\\NeDL\\Week 5  competency\\Week 5  competency.csproj",
+        "projectUniqueName": "C:\\Users\\Noah Anderson\\OneDrive - ALLO\\Desktop\\NeDL\\Week5 comp\\NeDL-Repo-NA\\Week 5  competency.csproj",
         "projectName": "Week 5  competency",
-        "projectPath": "C:\\Users\\QAnderson\\Desktop\\NeDL\\Week 5  competency\\Week 5  competency.csproj",
-        "packagesPath": "C:\\Users\\QAnderson\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\QAnderson\\Desktop\\NeDL\\Week 5  competency\\obj\\",
+        "projectPath": "C:\\Users\\Noah Anderson\\OneDrive - ALLO\\Desktop\\NeDL\\Week5 comp\\NeDL-Repo-NA\\Week 5  competency.csproj",
+        "packagesPath": "C:\\Users\\Noah Anderson\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Noah Anderson\\OneDrive - ALLO\\Desktop\\NeDL\\Week5 comp\\NeDL-Repo-NA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\QAnderson\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Noah Anderson\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,7 +43,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -54,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.110\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

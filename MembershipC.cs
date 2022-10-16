@@ -8,6 +8,12 @@ namespace MemeberShipProg
         private double AmmounThisMonth = 0;
         public double annualRate = 120;
         private double cashBackAmmount = 0;
+        private double tier = 0;
+        public double PBtier
+        {
+            get { return tier; }
+            set { tier = value; }
+        }
         public double PBCashbackAmmount
         {
             get { return cashBackAmmount; }

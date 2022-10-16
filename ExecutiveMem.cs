@@ -2,22 +2,18 @@ namespace MemeberShipProg
 {
     class ExecutiveMember : MemberShip
     {
-        private double tier = 0;
+        
         public double Cashback1 = .25;
         public double cashBack2 = .5;
 
-        public double PBtier
-        {
-            get { return tier; }
-            set { tier = value; }
-        }
+        
         public ExecutiveMember() : base()
         {
 
         }
         public ExecutiveMember(string NewMemID, string NewEmail, string newMemTy, double newAmmountMonth, double newTier) : base(NewMemID, NewEmail, newMemTy, newAmmountMonth)
         {
-            tier = newTier;
+            PBtier = newTier;
         }
 
         public string Tostring()
